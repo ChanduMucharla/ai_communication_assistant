@@ -1,0 +1,26 @@
+[
+  {
+    "from": "jane.doe@example.com",
+    "subject": "Support - Cannot access my account immediately",
+    "body": "Hi team,\nI cannot access my account and I need this fixed immediately. The reset link isn't working. Phone: +1-202-555-0139. Product: AlphaSuite Pro.\nThanks,\nJane",
+    "date": "2025-09-15 14:21:00"
+  },
+  {
+    "from": "rahul.kumar@example.com",
+    "subject": "Query: Refund for last month's billing",
+    "body": "Hello,\nI was charged twice last month. Could I get a refund? My alternate email is rahul.alt@mail.com. I'm a bit frustrated because I raised this before.\nRegards,\nRahul",
+    "date": "2025-09-15 10:05:00"
+  },
+  {
+    "from": "samir@customer.io",
+    "subject": "Request - Feature enablement for Beta",
+    "body": "Dear Support,\nPlease enable the Beta feature for my workspace. Not urgent but would be helpful this week.\nThanks,\nSamir",
+    "date": "2025-09-14 19:40:00"
+  },
+  {
+    "from": "linda@example.org",
+    "subject": "Help: Cannot download invoice",
+    "body": "Hi,\nI cannot download my invoice from the portal; it shows a 403 error. This is critical for my audit tomorrow.\n-Linda",
+    "date": "2025-09-15 08:15:00"
+  }
+]
