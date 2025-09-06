@@ -1,105 +1,113 @@
-📧 AI Communication Assistant (Streamlit Version)
+🚀 AI Communication Assistant (Streamlit Version)
 
 The AI Communication Assistant is a smart platform that helps organizations manage support-related emails end-to-end.
 It retrieves incoming emails, analyzes them for sentiment and urgency, generates context-aware draft replies, and presents everything on a Streamlit-powered dashboard.
 
-This improves:
+✨ This project improves:
 
-⚡ Efficiency (automatic prioritization)
+⚡ Efficiency → automatic prioritization
 
-💬 Response quality (empathetic, professional AI replies)
+💬 Response quality → empathetic, professional AI replies
 
-😊 Customer satisfaction
+😊 Customer satisfaction → faster, accurate support
 
-🚀 Features
-1. Email Retrieval & Filtering
+🎯 Core Features
+📩 1. Email Retrieval & Filtering
 
-Connects to your email inbox (via IMAP/Gmail/Outlook APIs).
+✔️ Connects to your inbox via IMAP (Gmail/Outlook)
+✔️ Filters only support-related emails (subjects containing: Support, Query, Request, Help)
+✔️ Extracts:
 
-Filters only support-related emails (subjects containing: Support, Query, Request, Help).
-
-Extracts key details:
-
-Sender email
+Sender
 
 Subject
 
 Body
 
-Date/time received
+Date/Time
 
-2. Categorization & Prioritization
+🧠 2. Categorization & Prioritization
 
-Sentiment Analysis using NLTK VADER:
+✔️ Sentiment Analysis → Positive / Negative / Neutral
+✔️ Priority Detection → Urgent / Not Urgent (keyword-based)
+✔️ Urgent emails appear first in dashboard
 
-Positive / Negative / Neutral
+🤖 3. Context-Aware AI Replies
 
-Priority Detection based on keywords:
+✔️ Uses OpenAI GPT (if API key provided)
+✔️ Draft replies are:
 
-Urgent (e.g., "immediately", "critical", "cannot access")
+Polite & professional
 
-Not Urgent
+Context-aware (mentions products/issues)
 
-Urgent emails appear first in the dashboard (priority queue).
+Empathetic (acknowledges frustration)
+✔️ Fallback template used if no API key
 
-3. Context-Aware AI Replies
+🔍 4. Information Extraction
 
-Uses OpenAI GPT models (if API key provided) to generate draft responses.
+✔️ Pulls contact details (phone, alt. email)
+✔️ Detects requirements/requests
+✔️ Extracts sentiment indicators
+✔️ Highlights products/services mentioned
 
-Draft replies are:
+📤 5. Email Sending
 
-Professional & empathetic
+✔️ Draft replies can be reviewed & edited
+✔️ Sending via SMTP (Gmail, Outlook, custom)
+✔️ Secure with App Passwords
 
-Context-aware (mentions products, acknowledges frustration, etc.)
+📊 6. Interactive Dashboard (Streamlit)
 
-If OpenAI key is missing → fallback template-based reply.
+✔️ Cards → Total, Resolved, Pending, Urgent
+✔️ Pie Chart → Sentiment distribution
+✔️ Bar Chart → Urgent vs Not Urgent
+✔️ Email Table → All emails, details, draft, and send
 
-Drafts are shown in the dashboard before sending.
+🛠 Tech Stack
 
-4. Information Extraction
+🖥 UI → Streamlit
 
-From each email, the assistant extracts:
+🔎 NLP → NLTK VADER (sentiment)
 
-Contact details (phone numbers, alternate emails)
+🤖 AI → OpenAI GPT API (optional)
 
-Customer requirements or requests
+🗄 Database → SQLite (SQLAlchemy ORM)
 
-Sentiment indicators (positive / negative words)
+📊 Charts → Plotly
 
-Product or service mentioned
+📧 Email → IMAP + SMTP
 
-This structured info is displayed alongside raw emails.
+⚡ Quickstart Guide
+1️⃣ Setup Environment
+cd app
+python3 -m venv .venv
+source .venv/bin/activate   # Linux/Mac
+.venv\Scripts\activate      # Windows
 
-5. Email Sending
 
-Draft replies can be edited before sending.
+Install dependencies:
 
-Sending uses SMTP with secure login.
+pip install -r requirements.txt
 
-Supports Gmail, Outlook, and custom SMTP servers.
+2️⃣ Configure Environment
 
-6. Dashboard (Streamlit)
+Create a .env file in app/:
 
-A clean, interactive dashboard showing:
+IMAP_HOST=imap.gmail.com
+IMAP_PORT=993
+IMAP_USER=your_email@gmail.com
+IMAP_PASSWORD=your_app_password
 
-📊 Cards: Total emails, Resolved, Pending, Urgent
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
 
-🥧 Pie Chart: Sentiment distribution
+OPENAI_API_KEY=sk-xxxxxx   # optional
 
-📊 Bar Chart: Urgent vs Not Urgent
 
-📋 Email Table: Each email with details, draft reply button, and send option
+⚠️ Use App Passwords for Gmail/Outlook instead of normal passwords.
 
-🛠️ Tech Stack
-
-UI: Streamlit
-
-ML/NLP: NLTK (sentiment), keyword-based priority detection
-
-AI: OpenAI GPT API (optional)
-
-DB: SQLite (via SQLAlchemy)
-
-Charts: Plotly (integrated in Streamlit)
-
-Email: IMAP for reading, SMTP for sending
+3️⃣ Run the App
+streamlit run app.py
